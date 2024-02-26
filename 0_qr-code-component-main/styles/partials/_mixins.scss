@@ -1,6 +1,6 @@
-// FONT
 @use "./variables" as *;
 
+// BREAKPOINTS
 @mixin mobile {
   @media screen and (max-width: $width-mobile) {
     @content;
@@ -11,4 +11,10 @@
   @media screen and (max-width: $width-desktop) {
     @content;
   }
+}
+
+//SHORTHANDS
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
 }

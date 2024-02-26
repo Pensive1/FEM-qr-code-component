@@ -14,6 +14,53 @@ html {
 }
 
 body {
+  height: 100vh;
   font-size: 1.6rem;
   background-color: $color-light-gray;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+.qr-card {
+  width: 335px;
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  background-color: $color-white;
+
+  @include flex-col;
+  gap: 1rem;
+
+  text-align: center;
+
+  &__img {
+    border-radius: 1rem;
+  }
+
+  &__txt-content {
+    @include flex-col;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  &__body {
+    color: $color-gray-blue;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
 }
