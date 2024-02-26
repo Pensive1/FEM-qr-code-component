@@ -1,0 +1,14 @@
+// FONT
+@use "./variables" as *;
+
+@mixin mobile {
+  @media screen and (max-width: $width-mobile) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $width-desktop) {
+    @content;
+  }
+}
