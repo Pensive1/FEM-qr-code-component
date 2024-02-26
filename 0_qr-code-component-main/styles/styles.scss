@@ -39,6 +39,8 @@ body {
 
   text-align: center;
 
+  box-shadow: 0 1rem 4rem 0 $color-gray-blue--trans;
+
   &__img {
     border-radius: 1rem;
   }
@@ -49,8 +51,14 @@ body {
     padding: 1.5rem;
   }
 
+  &__heading {
+    color: $color-dark-blue;
+    font-weight: $font-bold;
+  }
   &__body {
     color: $color-gray-blue;
+    font-weight: $font-reg;
+    font-size: $font-size-body;
   }
 }
 
