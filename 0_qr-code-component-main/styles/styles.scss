@@ -1,0 +1,74 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+/* RESETS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Outfit";
+}
+
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  background-color: $color-light-gray;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+.qr-card {
+  width: 335px;
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  background-color: $color-white;
+
+  @include flex-col;
+  gap: 1rem;
+
+  text-align: center;
+
+  box-shadow: 0 1rem 4rem 0 $color-gray-blue--trans;
+
+  &__img {
+    border-radius: 1rem;
+  }
+
+  &__txt-content {
+    @include flex-col;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  &__heading {
+    color: $color-dark-blue;
+    font-weight: $font-bold;
+  }
+  &__body {
+    color: $color-gray-blue;
+    font-weight: $font-reg;
+    font-size: $font-size-body;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
