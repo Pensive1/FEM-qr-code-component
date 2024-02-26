@@ -24,7 +24,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- Solution URL: [GitHub Repo](https://github.com/Pensive1/front-end-montor-challenges/tree/91edb7d3031cefeca337cb58c76035c2534d5223/0_qr-code-component-main)
+- Solution URL: [GitHub Repo](https://github.com/Pensive1/front-end-montor-challenges/tree/main/0_qr-code-component-main)
 - Live Site URL: [GitHub Page](https://pensive1.github.io/front-end-montor-challenges/0_qr-code-component-main/)
 
 ## My process
