@@ -8,18 +8,18 @@ function App() {
       <main className="container">
         <form action="submit" className="dob">
           <fieldset>
-            <input type="number" placeholder="DD" id="dobDay"></input>
             <label htmlFor="dobDay">Day</label>
+            <input type="number" placeholder="DD" id="dobDay"></input>
           </fieldset>
 
           <fieldset>
-            <input type="number" placeholder="MM" id="dobMonth"></input>
             <label htmlFor="dobMonth">Month</label>
+            <input type="number" placeholder="MM" id="dobMonth"></input>
           </fieldset>
 
           <fieldset>
-            <input type="number" placeholder="YYYY" id="dobYear"></input>
             <label htmlFor="dobYear">Year</label>
+            <input type="number" placeholder="YYYY" id="dobYear"></input>
           </fieldset>
           <button type="submit"></button>
         </form>
