@@ -1,6 +1,8 @@
 import { useRef } from "react";
-import { DOBInput } from "../types/ComponentProps";
-import detailedAge from "../utils/AgeCalc";
+import { DOBInput } from "../../types/ComponentProps";
+import detailedAge from "../../utils/AgeCalc";
+import "./DobInput-styles.scss";
+// import ArrowSvg from "../../assets/images/icon-arrow.svg";
 
 const DobInput = ({
   setResultYears,
@@ -39,7 +41,7 @@ const DobInput = ({
         <input
           type="number"
           placeholder="DD"
-          className="dob_input"
+          className="dob__input"
           id="dobDay"
           ref={dobDay}
           min={1}
@@ -54,7 +56,7 @@ const DobInput = ({
         <input
           type="number"
           placeholder="MM"
-          className="dob_input"
+          className="dob__input"
           id="dobMonth"
           ref={dobMonth}
           min={1}
@@ -69,13 +71,13 @@ const DobInput = ({
         <input
           type="number"
           placeholder="YYYY"
-          className="dob_input"
+          className="dob__input"
           ref={dobYear}
           id="dobYear"
           min={1}
         ></input>
       </fieldset>
-      <button type="submit">Submit</button>
+      <button type="submit" className="dob__submit"></button>
     </form>
   );
 };

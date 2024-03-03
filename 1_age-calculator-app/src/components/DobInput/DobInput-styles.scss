@@ -1,0 +1,51 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.dob {
+  display: flex;
+  column-gap: 1rem;
+  position: relative;
+  border-bottom: 1px solid $color-neutral-light-grey;
+  padding-bottom: 4rem;
+
+  &__fields {
+    border: none;
+    @include column-flex;
+    row-gap: 0.5rem;
+    flex: 1 0 auto;
+  }
+
+  &__field-label {
+    font-size: 1.2rem;
+    color: $color-neutral-smoky-grey;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+  }
+  &__input {
+    border: 1px solid $color-neutral-light-grey;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    @include desktop {
+      font-size: $size-input;
+    }
+  }
+
+  &__submit {
+    border-radius: 50%;
+    border: none;
+    background-image: url(../../assets/images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.5rem;
+    background-color: $color-primary-purple;
+    width: 5rem;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    position: absolute;
+    bottom: -25%;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}

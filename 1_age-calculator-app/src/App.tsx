@@ -1,6 +1,6 @@
 import { useState } from "react";
-import DobInput from "./components/DobInput.tsx";
-import Results from "./components/Results.tsx";
+import DobInput from "./components/DobInput/DobInput.tsx";
+import Results from "./components/Results/Results.tsx";
 
 function App() {
   const [resultYears, setResultYears] = useState(null);

@@ -1,0 +1,34 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/fonts" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins";
+  font-size: 62.5%;
+  background-color: $color-neutral-off-white;
+}
+
+body {
+  color: $color-neutral-off-black;
+  min-height: 100vh;
+  @include column-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  font-family: "Poppins";
+}
+
+.container {
+  @include column-flex;
+  background-color: $color-neutral-white;
+  padding: 3rem 2rem 5rem;
+  border-radius: 2rem 2rem 10rem;
+}
