@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { DOBInput } from "../types/ComponentProps";
+import detailedAge from "../utils/AgeCalc";
 
 const DobInput = ({
   setResultYears,
@@ -18,9 +19,14 @@ const DobInput = ({
       dobDay.current?.value;
 
     if (inputValidation) {
-      setResultYears(dobYear.current?.value);
-      setResultMonths(dobMonth.current?.value);
-      setResultDays(dobDay.current?.value);
+      const yearVal = +dobYear.current?.value;
+      const monthVal = +dobMonth.current?.value;
+      const dayVal = +dobDay.current?.value;
+
+      const result = detailedAge(dayVal, monthVal, yearVal);
+      setResultYears(result.years);
+      setResultMonths(result.months);
+      setResultDays(result.days);
     }
   };
 
