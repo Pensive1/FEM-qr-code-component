@@ -1,0 +1,12 @@
+@use "../../styles/partials/variables" as *;
+.age {
+  padding-top: 8rem;
+  font-size: calc($size-input * 2);
+  font-weight: 800;
+  font-style: italic;
+  line-height: 7rem;
+
+  &__value {
+    color: $color-primary-purple;
+  }
+}
