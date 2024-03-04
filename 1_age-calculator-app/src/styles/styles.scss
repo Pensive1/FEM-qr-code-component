@@ -16,11 +16,17 @@ html {
 
 body {
   color: $color-neutral-off-black;
-  min-height: 100vh;
+  min-height: 100dvh;
   @include column-flex;
   align-items: center;
-  justify-content: center;
   overflow-x: hidden;
+  padding-top: 9rem;
+  transition: all 0.5s;
+
+  @include desktop {
+    justify-content: center;
+    padding-top: unset;
+  }
 }
 
 input {
@@ -37,4 +43,10 @@ input {
   background-color: $color-neutral-white;
   padding: 5rem 2.4rem 6rem;
   border-radius: 2rem 2rem 9rem;
+
+  @include desktop {
+    width: 84rem;
+    padding: 6rem 5rem 8rem;
+    border-radius: 4rem 4rem 19rem;
+  }
 }

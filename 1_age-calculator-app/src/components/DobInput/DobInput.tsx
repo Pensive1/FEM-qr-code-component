@@ -35,9 +35,6 @@ const DobInput = ({
   return (
     <form action="submit" className="dob" onSubmit={handleSubmit}>
       <fieldset className="dob__fields">
-        <label className="dob__field-label" htmlFor="dobDay">
-          Day
-        </label>
         <input
           type="number"
           placeholder="DD"
@@ -47,12 +44,12 @@ const DobInput = ({
           min={1}
           max={31}
         ></input>
+        <label className="dob__field-label" htmlFor="dobDay">
+          Day
+        </label>
       </fieldset>
 
       <fieldset className="dob__fields">
-        <label className="dob__field-label" htmlFor="dobMonth">
-          Month
-        </label>
         <input
           type="number"
           placeholder="MM"
@@ -62,12 +59,12 @@ const DobInput = ({
           min={1}
           max={12}
         ></input>
+        <label className="dob__field-label" htmlFor="dobMonth">
+          Month
+        </label>
       </fieldset>
 
       <fieldset className="dob__fields">
-        <label className="dob__field-label" htmlFor="dobYear">
-          Year
-        </label>
         <input
           type="number"
           placeholder="YYYY"
@@ -76,6 +73,9 @@ const DobInput = ({
           id="dobYear"
           min={1}
         ></input>
+        <label className="dob__field-label" htmlFor="dobYear">
+          Year
+        </label>
       </fieldset>
       <button type="submit" className="dob__submit"></button>
     </form>

@@ -8,9 +8,15 @@
   border-bottom: 1px solid $color-neutral-light-grey;
   padding-bottom: 6rem;
 
+  @include desktop {
+    padding-bottom: 5rem;
+    padding-right: 30%;
+  }
+
   &__fields {
     border: none;
-    @include column-flex;
+    display: flex;
+    flex-direction: column-reverse;
     row-gap: 1rem;
     flex: 1 0;
   }
@@ -20,16 +26,34 @@
     color: $color-neutral-smoky-grey;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
+    @include desktop {
+      font-size: 1.4rem;
+    }
   }
+
   &__input {
     border: 1px solid $color-neutral-light-grey;
     padding: 1rem;
     border-radius: 1rem;
     height: 5rem;
     width: 100%;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    caret-color: $color-primary-purple;
     @include desktop {
       font-size: $size-input;
+      height: 7rem;
+    }
+
+    &:focus {
+      outline-color: $color-primary-purple;
+    }
+
+    &:invalid {
+      border-color: $color-primary-light-red;
+    }
+
+    &:invalid + .dob__field-label {
+      color: $color-primary-light-red;
     }
   }
 
@@ -39,7 +63,7 @@
     background-image: url(../../assets/images/icon-arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 2.5rem;
+    background-size: 2.6rem;
     background-color: $color-primary-purple;
     width: 6.5rem;
     aspect-ratio: 1 / 1;
@@ -49,6 +73,13 @@
     right: 50%;
     transform: translate(50%, 50%);
     transition: all 0.5s;
+
+    @include desktop {
+      width: 10rem;
+      right: 0;
+      transform: translate(0, 50%);
+      background-size: 4.6rem;
+    }
 
     &:hover {
       background-color: $color-neutral-off-black;

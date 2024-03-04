@@ -6,10 +6,16 @@
   border-bottom: 1px solid hsl(0, 0%, 86%);
   padding-bottom: 6rem;
 }
+@media screen and (min-width: 1440px) {
+  .dob {
+    padding-bottom: 5rem;
+    padding-right: 30%;
+  }
+}
 .dob__fields {
   border: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   row-gap: 1rem;
   flex: 1 0;
 }
@@ -19,18 +25,34 @@
   text-transform: uppercase;
   letter-spacing: 0.3rem;
 }
+@media screen and (min-width: 1440px) {
+  .dob__field-label {
+    font-size: 1.4rem;
+  }
+}
 .dob__input {
   border: 1px solid hsl(0, 0%, 86%);
   padding: 1rem;
   border-radius: 1rem;
   height: 5rem;
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 2rem;
+  caret-color: hsl(259, 100%, 65%);
 }
 @media screen and (min-width: 1440px) {
   .dob__input {
     font-size: 3.2rem;
+    height: 7rem;
   }
+}
+.dob__input:focus {
+  outline-color: hsl(259, 100%, 65%);
+}
+.dob__input:invalid {
+  border-color: hsl(0, 100%, 67%);
+}
+.dob__input:invalid + .dob__field-label {
+  color: hsl(0, 100%, 67%);
 }
 .dob__submit {
   border-radius: 50%;
@@ -38,7 +60,7 @@
   background-image: url(../../assets/images/icon-arrow.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 2.5rem;
+  background-size: 2.6rem;
   background-color: hsl(259, 100%, 65%);
   width: 6.5rem;
   aspect-ratio: 1/1;
@@ -48,6 +70,14 @@
   right: 50%;
   transform: translate(50%, 50%);
   transition: all 0.5s;
+}
+@media screen and (min-width: 1440px) {
+  .dob__submit {
+    width: 10rem;
+    right: 0;
+    transform: translate(0, 50%);
+    background-size: 4.6rem;
+  }
 }
 .dob__submit:hover {
   background-color: hsl(0, 0%, 8%);
