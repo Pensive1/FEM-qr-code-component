@@ -65,15 +65,17 @@ const DobInput = ({
   };
   const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
-    console.dir(dobYear.current);
+    // console.dir(dobYear.current);
 
-    // Basic form validation
-    const inputValidation =
-      dobYear.current?.value &&
-      dobMonth.current?.value &&
-      dobDay.current?.value;
+    const noErrors =
+      dobYear.current &&
+      dateErr === "" &&
+      dobMonth.current &&
+      monthErr === "" &&
+      dobDay.current &&
+      yearErr === "";
 
-    if (inputValidation) {
+    if (noErrors) {
       const yearVal = +dobYear.current?.value;
       const monthVal = +dobMonth.current?.value;
       const dayVal = +dobDay.current?.value;
@@ -82,6 +84,10 @@ const DobInput = ({
       setResultYears(result.years);
       setResultMonths(result.months);
       setResultDays(result.days);
+    } else {
+      setResultYears(null);
+      setResultMonths(null);
+      setResultDays(null);
     }
   };
 
@@ -95,8 +101,9 @@ const DobInput = ({
           className="dob__input"
           id="dobDay"
           ref={dobDay}
-          min={1}
-          max={31}
+          // min={1}
+          // max={31}
+          onBlur={dateCheck}
           onChange={dateCheck}
         ></input>
         <label className="dob__field-label" htmlFor="dobDay">
@@ -112,8 +119,9 @@ const DobInput = ({
           className="dob__input"
           id="dobMonth"
           ref={dobMonth}
-          min={1}
-          max={12}
+          // min={1}
+          // max={12}
+          onBlur={monthCheck}
           onChange={monthCheck}
         ></input>
         <label className="dob__field-label" htmlFor="dobMonth">
@@ -129,8 +137,9 @@ const DobInput = ({
           className="dob__input"
           ref={dobYear}
           id="dobYear"
-          min={1}
-          max={new Date().getFullYear()}
+          // min={1}
+          // max={new Date().getFullYear()}
+          onBlur={yearCheck}
           onChange={yearCheck}
         ></input>
         <label className="dob__field-label" htmlFor="dobYear">

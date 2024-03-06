@@ -8,19 +8,19 @@ const Results = ({ resultYears, resultMonths, resultDays }: Result) => {
         <span className="age__value">
           {resultYears !== null ? resultYears : "--"}
         </span>{" "}
-        years
+        <span className="age__unit">years</span>
       </p>
       <p className="age__data">
         <span className="age__value">
           {resultMonths !== null ? resultMonths : "--"}
         </span>{" "}
-        months
+        <span className="age__unit">months</span>
       </p>
       <p className="age__data">
         <span className="age__value">
           {resultDays !== null ? resultDays : "--"}
         </span>{" "}
-        days
+        <span className="age__unit">days</span>
       </p>
     </section>
   );

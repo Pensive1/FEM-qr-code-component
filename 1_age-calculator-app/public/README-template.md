@@ -73,6 +73,33 @@ Use this section to recap over some of your major learnings while working throug
 
 To see how you can add code snippets, see below:
 
+#### CSS
+
+- Fluid font sizing can be achieved using the [`clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) function and flexbox:
+
+```scss
+.age {
+  padding-top: 8rem;
+  font-size: clamp($size-input, 6.4rem, 14vw);
+  font-weight: 800;
+  font-style: italic;
+  line-height: 7rem;
+  @include desktop {
+    padding-top: 6rem;
+    font-size: 10.5rem;
+    line-height: 12rem;
+  }
+
+  &__data {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__unit {
+    flex-shrink: 1;
+  }
+```
+
 #### React
 
 1. 'useRef' is not only used for getting a value but for accessing DOM properties of a referenced node. This was useful for field validation. Other than that, its great for getting a value without changing states.
@@ -105,6 +132,6 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- [React TypeScript Tutorials for Beginners](https://youtube.com/playlist?list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&si=f_JXJXh6i76_cj1-) - Codevolution
+- [Form Validation Guide](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - MDN
+- [Constraint Validation API in practice](https://youtu.be/D9JHizCAx8U?si=BXeZCudd0T3WCaSR) - Steve Griffith

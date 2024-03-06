@@ -3,10 +3,11 @@
 
 .dob {
   display: flex;
+  align-items: start;
   column-gap: 1rem;
   position: relative;
   border-bottom: 1px solid $color-neutral-light-grey;
-  padding-bottom: 6rem;
+  padding-bottom: 3.2rem;
 
   @include desktop {
     padding-bottom: 5rem;
@@ -35,7 +36,14 @@
 
     &-err {
       color: $color-primary-light-red;
-      min-height: 1.6rem;
+      min-height: 3.2rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      @include desktop {
+        min-height: 1.6rem;
+      }
     }
   }
 
