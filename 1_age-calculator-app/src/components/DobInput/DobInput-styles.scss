@@ -21,13 +21,21 @@
     flex: 1 0;
   }
 
-  &__field-label {
-    font-size: 1.2rem;
-    color: $color-neutral-smoky-grey;
-    text-transform: uppercase;
-    letter-spacing: 0.3rem;
+  &__field {
     @include desktop {
       font-size: 1.4rem;
+    }
+
+    &-label {
+      font-size: 1.2rem;
+      color: $color-neutral-smoky-grey;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+    }
+
+    &-err {
+      color: $color-primary-light-red;
+      min-height: 1.6rem;
     }
   }
 

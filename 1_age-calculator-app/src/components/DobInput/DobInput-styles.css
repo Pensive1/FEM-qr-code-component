@@ -19,16 +19,20 @@
   row-gap: 1rem;
   flex: 1 0;
 }
+@media screen and (min-width: 1440px) {
+  .dob__field {
+    font-size: 1.4rem;
+  }
+}
 .dob__field-label {
   font-size: 1.2rem;
   color: hsl(0, 1%, 44%);
   text-transform: uppercase;
   letter-spacing: 0.3rem;
 }
-@media screen and (min-width: 1440px) {
-  .dob__field-label {
-    font-size: 1.4rem;
-  }
+.dob__field-err {
+  color: hsl(0, 100%, 67%);
+  min-height: 1.6rem;
 }
 .dob__input {
   border: 1px solid hsl(0, 0%, 86%);
