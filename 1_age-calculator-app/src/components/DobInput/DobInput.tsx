@@ -66,7 +66,6 @@ const DobInput = ({
   };
   const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
-    // console.dir(dobYear.current);
 
     const yearField = dobYear.current;
     const monthField = dobMonth.current;
@@ -74,7 +73,7 @@ const DobInput = ({
 
     const filledFields = yearField && monthField && dayField;
     const noErrors =
-      filledFields && [dateErr, monthErr, yearErr].every((err) => err === "");
+      filledFields && [dateErr, monthErr, yearErr].some((err) => err === "");
 
     const isValidDate =
       filledFields &&
@@ -90,6 +89,7 @@ const DobInput = ({
       setResultMonths(result.months);
       setResultDays(result.days);
     } else {
+      setDateErr("Must be a valid date");
       setResultYears(null);
       setResultMonths(null);
       setResultDays(null);

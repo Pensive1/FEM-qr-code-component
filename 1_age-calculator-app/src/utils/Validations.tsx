@@ -1,5 +1,4 @@
 /* RUNS ON SUBMIT */
-// If date is invalid (eg 31/02/2000) -> Must be a valid date
 
 //full date validation
 export const checkFullDate = (day: string, month: string, year: string) => {
@@ -9,18 +8,32 @@ export const checkFullDate = (day: string, month: string, year: string) => {
   }
 
   // 2. if date is incorrect (30/2/2024) -> check that the month matches the reference month
-  const dateLimits = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   const dayNum = +day;
   const monthNum = +month - 1;
   const yearNum = +year;
   const leapYear =
     (yearNum % 4 === 0 && yearNum % 100 !== 0) || yearNum % 400 === 0;
+  const dateLimits = [
+    31,
+    leapYear ? 29 : 28,
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31,
+  ];
 
-  if (monthNum === 1 && !leapYear && dayNum === 29) {
-    return false;
-  }
-
-  if (dayNum > dateLimits[monthNum]) {
+  if (
+    monthNum < 0 ||
+    monthNum > 11 ||
+    dayNum < 1 ||
+    dayNum > dateLimits[monthNum]
+  ) {
     return false;
   }
 
