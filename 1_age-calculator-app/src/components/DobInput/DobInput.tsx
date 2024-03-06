@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { DOBInput } from "../../types/ComponentProps";
 import detailedAge from "../../utils/AgeCalc";
+import { checkFullDate } from "../../utils/Validations";
 import "./DobInput-styles.scss";
 
 const DobInput = ({
@@ -67,18 +68,22 @@ const DobInput = ({
     e.preventDefault();
     // console.dir(dobYear.current);
 
-    const noErrors =
-      dobYear.current &&
-      dateErr === "" &&
-      dobMonth.current &&
-      monthErr === "" &&
-      dobDay.current &&
-      yearErr === "";
+    const yearField = dobYear.current;
+    const monthField = dobMonth.current;
+    const dayField = dobDay.current;
 
-    if (noErrors) {
-      const yearVal = +dobYear.current?.value;
-      const monthVal = +dobMonth.current?.value;
-      const dayVal = +dobDay.current?.value;
+    const filledFields = yearField && monthField && dayField;
+    const noErrors =
+      filledFields && [dateErr, monthErr, yearErr].every((err) => err === "");
+
+    const isValidDate =
+      filledFields &&
+      checkFullDate(dayField?.value, monthField?.value, yearField?.value);
+
+    if (noErrors && isValidDate) {
+      const yearVal = +yearField.value;
+      const monthVal = +monthField.value;
+      const dayVal = +dayField.value;
 
       const result = detailedAge(dayVal, monthVal, yearVal);
       setResultYears(result.years);

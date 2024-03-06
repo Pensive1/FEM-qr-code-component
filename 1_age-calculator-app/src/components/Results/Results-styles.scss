@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 .age {
   padding-top: 8rem;
-  font-size: clamp($size-input, 6.4rem, 14vw);
+  font-size: clamp($size-input, 5.6rem, 14vw);
   font-weight: 800;
   font-style: italic;
   line-height: 7rem;
