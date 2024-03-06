@@ -3,7 +3,7 @@
 //full date validation
 export const checkFullDate = (day: string, month: string, year: string) => {
   // 1. All values can be converted to numbers -> isNan(+val)
-  if ([+day, +month, +year].every((val) => isNaN(val))) {
+  if ([+day, +month, +year].some((val) => isNaN(val))) {
     return false;
   }
 
@@ -38,5 +38,10 @@ export const checkFullDate = (day: string, month: string, year: string) => {
   }
 
   // 3. if full date is ahead of current date -> setYearErr("Must be in the past")
+  const queryDate = new Date(yearNum, monthNum, dayNum);
+  if (queryDate > new Date()) {
+    return false;
+  }
+
   return true;
 };
