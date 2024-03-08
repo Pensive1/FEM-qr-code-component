@@ -60,8 +60,15 @@
       height: 7rem;
     }
 
-    &:focus {
+    &:focus,
+    &:hover {
       outline-color: $color-primary-purple;
+      border-color: $color-primary-purple;
+    }
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
 
     &:invalid {
