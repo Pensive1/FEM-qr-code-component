@@ -14,21 +14,21 @@ const Results = ({ resultYears, resultMonths, resultDays }: Result) => {
   let dayHandler: number;
 
   const countYears = () => {
-    if (resultYears) {
+    if (resultYears !== null) {
       yearHandler = countUp(resultYears, setYearCounter);
       return yearCounter === resultYears && clearInterval(yearHandler);
     }
   };
 
   const countMonths = () => {
-    if (resultMonths) {
+    if (resultMonths !== null) {
       yearHandler = countUp(resultMonths, setMonthCounter);
       return yearCounter === resultMonths && clearInterval(monthHandler);
     }
   };
 
   const countDays = () => {
-    if (resultDays) {
+    if (resultDays !== null) {
       yearHandler = countUp(resultDays, setDayCounter);
       return dayCounter === resultDays && clearInterval(dayHandler);
     }
