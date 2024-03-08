@@ -31,7 +31,7 @@ const countUp = (
     if (startVal === targetVal) {
       clearInterval(counter);
     }
-  }, 20);
+  }, 30);
 
   return counter;
 

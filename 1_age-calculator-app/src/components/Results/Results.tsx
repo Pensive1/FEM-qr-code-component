@@ -8,19 +8,40 @@ const Results = ({ resultYears, resultMonths, resultDays }: Result) => {
   const [monthCounter, setMonthCounter] = useState(0);
   const [dayCounter, setDayCounter] = useState(0);
 
-  let yearHandler = useRef<undefined | number>();
+  // let yearHandler = useRef<undefined | number>();
+  let yearHandler: number;
+  let monthHandler: number;
+  let dayHandler: number;
 
   const countYears = () => {
     if (resultYears) {
-      yearHandler.current = countUp(resultYears, setYearCounter);
-      return () =>
-        yearCounter === resultYears && clearInterval(yearHandler.current);
+      yearHandler = countUp(resultYears, setYearCounter);
+      return yearCounter === resultYears && clearInterval(yearHandler);
+    }
+  };
+
+  const countMonths = () => {
+    if (resultMonths) {
+      yearHandler = countUp(resultMonths, setMonthCounter);
+      return yearCounter === resultMonths && clearInterval(monthHandler);
+    }
+  };
+
+  const countDays = () => {
+    if (resultDays) {
+      yearHandler = countUp(resultDays, setDayCounter);
+      return dayCounter === resultDays && clearInterval(dayHandler);
     }
   };
 
   useEffect(() => {
-    countYears();
-  }, [resultYears]);
+    const counters = [countYears, countMonths, countDays];
+
+    // Stagger function calls
+    counters.forEach((fn, i) => {
+      setTimeout(fn, i * 200);
+    });
+  }, [resultYears, resultMonths, resultDays]);
 
   return (
     <section className="age">
@@ -32,13 +53,13 @@ const Results = ({ resultYears, resultMonths, resultDays }: Result) => {
       </p>
       <p className="age__data">
         <span className="age__value">
-          {resultMonths !== null ? resultMonths : "--"}
+          {resultMonths !== null ? monthCounter : "--"}
         </span>{" "}
         <span className="age__unit">months</span>
       </p>
       <p className="age__data">
         <span className="age__value">
-          {resultDays !== null ? resultDays : "--"}
+          {resultDays !== null ? dayCounter : "--"}
         </span>{" "}
         <span className="age__unit">days</span>
       </p>
