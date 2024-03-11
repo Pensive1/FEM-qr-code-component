@@ -105,7 +105,10 @@ To see how you can add code snippets, see below:
 #### React
 
 1. 'useRef' is not only used for getting a value but for accessing DOM properties of a referenced node. This was useful for field validation. Other than that, its great for getting a value without changing states.
+
 1. `onBlur` is React's equivalent of JavaScripts `onFocusOut` event.
+
+1. State update functions can be passed into exported functions as callbacks. It is then executed in the function body.
 
 #### TypeScript for React
 

@@ -1,9 +1,14 @@
+import options from "../types/AnimationUtils";
+
 const countUp = (
   targetVal: number,
   uiUpdateFn: Function,
-  speed: number = 90
+  options: options = { speed: 60 }
 ) => {
-  const steps = Math.floor(targetVal / 3) > 0 ? Math.floor(targetVal / 3) : 1;
+  const steps =
+    Math.floor(targetVal / options.speed) > 0
+      ? Math.floor(targetVal / options.speed)
+      : 1;
   const remainder = steps > 0 ? targetVal % steps : 0;
   const softTargetVal = targetVal - remainder;
   let startVal = 0;
@@ -12,14 +17,14 @@ const countUp = (
   uiUpdateFn(startVal);
 
   const counter = setInterval(() => {
-    // For testing calculation output
+    // For checking calculation output
     // console.log(
     //   `start val: ${startVal}, Soft target: ${softTargetVal}, Target: ${targetVal}`
     // );
 
     if (startVal < softTargetVal) {
       uiUpdateFn((startVal += steps));
-      return;
+      //   return;
     }
 
     if (startVal >= softTargetVal && startVal !== targetVal) {
@@ -29,7 +34,7 @@ const countUp = (
     if (startVal === targetVal) {
       clearInterval(counter);
     }
-  }, speed);
+  }, options.speed);
 
   return counter;
 };
