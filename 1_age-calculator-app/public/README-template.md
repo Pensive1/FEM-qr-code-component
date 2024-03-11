@@ -75,7 +75,7 @@ To see how you can add code snippets, see below:
 
 #### CSS
 
-- Fluid font sizing can be achieved using the [`clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) function and flexbox:
+1. Fluid font sizing can be achieved using the [`clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) function and flexbox:
 
 ```scss
 .age {
@@ -100,6 +100,8 @@ To see how you can add code snippets, see below:
   }
 ```
 
+1. An element can be accurately positioned using `position` and `transform: translate(x% , y%)`. Using `translate` with percentage values moves the element based on its own dimensions.
+
 #### React
 
 1. 'useRef' is not only used for getting a value but for accessing DOM properties of a referenced node. This was useful for field validation. Other than that, its great for getting a value without changing states.
@@ -108,6 +110,10 @@ To see how you can add code snippets, see below:
 #### TypeScript for React
 
 - `React.SyntheticEvent` is used to represent an event when adding an event listener.
+
+#### JavaScript
+
+- Timers (`setInterval` and `setTimeout`) need to be assigned to a variable. Else, there's no way to reference them when calling `clearInterval`/ `clearTimeout`.
 
 ### Continued development
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Result } from "../../types/ComponentProps";
 import countUp from "../../utils/Animations";
 import "./Results-styles.scss";
@@ -8,30 +8,16 @@ const Results = ({ resultYears, resultMonths, resultDays }: Result) => {
   const [monthCounter, setMonthCounter] = useState(0);
   const [dayCounter, setDayCounter] = useState(0);
 
-  // let yearHandler = useRef<undefined | number>();
-  let yearHandler: number;
-  let monthHandler: number;
-  let dayHandler: number;
-
   const countYears = () => {
-    if (resultYears !== null) {
-      yearHandler = countUp(resultYears, setYearCounter);
-      return yearCounter === resultYears && clearInterval(yearHandler);
-    }
+    resultYears !== null && countUp(resultYears, setYearCounter);
   };
 
   const countMonths = () => {
-    if (resultMonths !== null) {
-      yearHandler = countUp(resultMonths, setMonthCounter);
-      return yearCounter === resultMonths && clearInterval(monthHandler);
-    }
+    resultMonths !== null && countUp(resultMonths, setMonthCounter);
   };
 
   const countDays = () => {
-    if (resultDays !== null) {
-      yearHandler = countUp(resultDays, setDayCounter);
-      return dayCounter === resultDays && clearInterval(dayHandler);
-    }
+    resultDays !== null && countUp(resultDays, setDayCounter);
   };
 
   useEffect(() => {

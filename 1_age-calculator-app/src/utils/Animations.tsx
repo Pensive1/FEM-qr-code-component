@@ -1,23 +1,21 @@
 const countUp = (
   targetVal: number,
-  uiUpdateFn: Function
-  //   uiRef: React.MutableRefObject<undefined>
+  uiUpdateFn: Function,
+  speed: number = 90
 ) => {
-  //1 Fetch the existing value (from dom)
-  // 2. Start from 0
-  const steps = 3;
-  let startVal = 0;
-  const remainder = targetVal % steps;
+  const steps = Math.floor(targetVal / 3) > 0 ? Math.floor(targetVal / 3) : 1;
+  const remainder = steps > 0 ? targetVal % steps : 0;
   const softTargetVal = targetVal - remainder;
+  let startVal = 0;
 
-  //   reset per function call
+  //   (State set function) resets per function call
   uiUpdateFn(startVal);
 
   const counter = setInterval(() => {
-    // for number of steps -> increase by steps
-    console.log(
-      `start val: ${startVal}, Soft target: ${softTargetVal}, Target: ${targetVal}`
-    );
+    // For testing calculation output
+    // console.log(
+    //   `start val: ${startVal}, Soft target: ${softTargetVal}, Target: ${targetVal}`
+    // );
 
     if (startVal < softTargetVal) {
       uiUpdateFn((startVal += steps));
@@ -31,18 +29,9 @@ const countUp = (
     if (startVal === targetVal) {
       clearInterval(counter);
     }
-  }, 30);
+  }, speed);
 
   return counter;
-
-  // ----------------------
-
-  // const spd = 97;
-  // const inc = targetVal / spd;
-
-  // if (startVal < targetVal){
-
-  // }
 };
 
 export default countUp;
