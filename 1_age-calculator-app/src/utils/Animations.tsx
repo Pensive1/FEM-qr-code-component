@@ -24,7 +24,6 @@ const countUp = (
 
     if (startVal < softTargetVal) {
       uiUpdateFn((startVal += steps));
-      //   return;
     }
 
     if (startVal >= softTargetVal && startVal !== targetVal) {

@@ -22,6 +22,14 @@ const DobInput = ({
   const [monthErr, setMonthErr] = useState("");
   const [yearErr, setYearErr] = useState("");
 
+  // Auto-switch fields
+  const nextFieldFocus = (
+    e: React.FormEvent<HTMLInputElement>,
+    fieldEl: React.RefObject<HTMLInputElement>
+  ) =>
+    (e.target as HTMLInputElement).value.length === 2 &&
+    fieldEl.current?.focus();
+
   const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
 
@@ -68,6 +76,7 @@ const DobInput = ({
           // max={31}
           onBlur={() => dateCheck(dobDay, setDateErr)}
           onChange={() => dateCheck(dobDay, setDateErr)}
+          onInput={(e) => nextFieldFocus(e, dobMonth)}
         ></input>
         <label className="dob__field-label" htmlFor="dobDay">
           Day
@@ -86,6 +95,7 @@ const DobInput = ({
           // max={12}
           onBlur={() => monthCheck(dobMonth, setMonthErr)}
           onChange={() => monthCheck(dobMonth, setMonthErr)}
+          onInput={(e) => nextFieldFocus(e, dobYear)}
         ></input>
         <label className="dob__field-label" htmlFor="dobMonth">
           Month
