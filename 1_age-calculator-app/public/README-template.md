@@ -112,11 +112,19 @@ To see how you can add code snippets, see below:
 
 #### TypeScript for React
 
-- `React.SyntheticEvent` is used to represent an event when adding an event listener.
+- `React.SyntheticEvent` is used to define an event type when adding an event listener.
 
 #### JavaScript
 
 - Timers (`setInterval` and `setTimeout`) need to be assigned to a variable. Else, there's no way to reference them when calling `clearInterval`/ `clearTimeout`.
+
+- **Modulo operator:** dividing a value by 0 returns `NaN`.
+
+For example, in the _count up_ function _(animation utils)_, if targetVal was divided by 0, the result will be `NaN` creating a bug which causes the setInterval function to loop infinately. To fix this, we use the ternary operator to define the values per case:
+
+```javascript
+const remainder = steps > 0 ? targetVal % steps : 0;
+```
 
 ### Continued development
 

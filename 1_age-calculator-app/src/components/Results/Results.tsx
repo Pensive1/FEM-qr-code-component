@@ -9,7 +9,7 @@ const Results = ({ resultYears, resultMonths, resultDays }: Result) => {
   const [dayCounter, setDayCounter] = useState(0);
 
   const countYears = () => {
-    resultYears !== null && countUp(resultYears, setYearCounter, 30);
+    resultYears !== null && countUp(resultYears, setYearCounter, { speed: 30 });
   };
 
   const countMonths = () => {
@@ -17,7 +17,7 @@ const Results = ({ resultYears, resultMonths, resultDays }: Result) => {
   };
 
   const countDays = () => {
-    resultDays !== null && countUp(resultDays, setDayCounter, 60);
+    resultDays !== null && countUp(resultDays, setDayCounter, { speed: 70 });
   };
 
   useEffect(() => {

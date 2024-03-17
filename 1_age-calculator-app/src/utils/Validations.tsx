@@ -1,6 +1,56 @@
-/* RUNS ON SUBMIT */
+import { fieldRef, fnErrMsg } from "../types/ValidationUtils";
 
-//full date validation
+// DATE VALIDATION
+export const dateCheck = (fieldRef: fieldRef, fnErrMsg: fnErrMsg) => {
+  const dateField = fieldRef.current;
+  const dateVal = Number(dateField?.value);
+  const invalidDate = dateVal === 0 || !(dateVal > 0) || !(dateVal <= 31);
+
+  if (dateField?.value === "") {
+    return fnErrMsg("This field is required");
+  }
+
+  if (invalidDate) {
+    return fnErrMsg("Must be a valid day");
+  }
+  fnErrMsg("");
+};
+
+// MONTH VALIDATION
+export const monthCheck = (fieldRef: fieldRef, fnErrMsg: fnErrMsg) => {
+  const monthField = fieldRef.current;
+  const monthVal = Number(monthField?.value);
+  const invalidMonth = monthVal === 0 || !(monthVal > 0) || !(monthVal <= 12);
+  if (monthField?.value === "") {
+    return fnErrMsg("This field is required");
+  }
+
+  if (invalidMonth) {
+    return fnErrMsg("Must be a valid month");
+  }
+  fnErrMsg("");
+};
+
+// YEAR VALIDATION
+export const yearCheck = (fieldRef: fieldRef, fnErrMsg: fnErrMsg) => {
+  const yearField = fieldRef.current;
+  const yearVal = Number(yearField?.value);
+  const invalidYear = yearVal > new Date().getFullYear();
+  if (yearField?.value === "") {
+    return fnErrMsg("This field is required");
+  }
+
+  if (invalidYear) {
+    return fnErrMsg("Must be in the past");
+  }
+
+  if (yearVal <= 0) {
+    return fnErrMsg("Invalid year");
+  }
+  fnErrMsg("");
+};
+
+//full date validation -> RUNS ON SUBMIT
 export const checkFullDate = (day: string, month: string, year: string) => {
   // 1. All values can be converted to numbers -> isNan(+val)
   if ([+day, +month, +year].some((val) => isNaN(val))) {
