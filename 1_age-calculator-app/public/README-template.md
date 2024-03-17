@@ -137,16 +137,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Learn more React Typescript types through [Codevolution](https://youtube.com/playlist?list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&si=f_JXJXh6i76_cj1-) and the [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Learn CSS Transform In 15 Minutes](https://www.youtube.com/watch?v=rzD-cPhq02E&t=27s) - Web Dev Simplified
+- [Form Validation Guide](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - MDN
 
 ## Author
 
@@ -154,10 +150,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
 ## Acknowledgments
 
 - [React TypeScript Tutorials for Beginners](https://youtube.com/playlist?list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&si=f_JXJXh6i76_cj1-) - Codevolution
-- [Form Validation Guide](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - MDN
 - [Constraint Validation API in practice](https://youtu.be/D9JHizCAx8U?si=BXeZCudd0T3WCaSR) - Steve Griffith
+- [ChatGPT](https://chat.openai.com/) - For learning and resolving advanced type issues when the solution wasn't readile available in StackOverflow.
