@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { DOBInput } from "../../types/ComponentProps";
 import detailedAge from "../../utils/AgeCalc";
 import {
+  blockInvalidChars,
   checkFullDate,
   dateCheck,
   monthCheck,
@@ -72,11 +73,12 @@ const DobInput = ({
           className="dob__input"
           id="dobDay"
           ref={dobDay}
-          // min={1}
-          // max={31}
+          min={1}
+          max={31}
           onBlur={() => dateCheck(dobDay, setDateErr)}
           onChange={() => dateCheck(dobDay, setDateErr)}
           onInput={(e) => nextFieldFocus(e, dobMonth)}
+          onKeyDown={blockInvalidChars}
         ></input>
         <label className="dob__field-label" htmlFor="dobDay">
           Day
@@ -91,11 +93,12 @@ const DobInput = ({
           className="dob__input"
           id="dobMonth"
           ref={dobMonth}
-          // min={1}
-          // max={12}
+          min={1}
+          max={12}
           onBlur={() => monthCheck(dobMonth, setMonthErr)}
           onChange={() => monthCheck(dobMonth, setMonthErr)}
           onInput={(e) => nextFieldFocus(e, dobYear)}
+          onKeyDown={blockInvalidChars}
         ></input>
         <label className="dob__field-label" htmlFor="dobMonth">
           Month
@@ -110,10 +113,11 @@ const DobInput = ({
           className="dob__input"
           ref={dobYear}
           id="dobYear"
-          // min={1}
-          // max={new Date().getFullYear()}
+          min={1}
+          max={new Date().getFullYear()}
           onBlur={() => yearCheck(dobYear, setYearErr)}
           onChange={() => yearCheck(dobYear, setYearErr)}
+          onKeyDown={blockInvalidChars}
         ></input>
         <label className="dob__field-label" htmlFor="dobYear">
           Year

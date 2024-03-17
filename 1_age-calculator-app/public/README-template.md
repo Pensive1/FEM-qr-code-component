@@ -54,24 +54,24 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+1. Programmed the detailed age function
+1. Created the basic HTML for the UI
+1. Styled the UI (mobile first)
+1. Added media queries for the desktop breakpoint
+1. Programmed validation functions
+1. Programmed the 'count-up' number animation
+1. Refactored and split functions into util files
+
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JavaScript
+- TypeScript
+- Sass
+- Mobile-first workflow
+- [DOM Constraint API](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState#browser_compatibility) - Field validation
 
 ### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
 
 #### CSS
 
@@ -98,21 +98,24 @@ To see how you can add code snippets, see below:
   &__unit {
     flex-shrink: 1;
   }
+}
 ```
 
-1. An element can be accurately positioned using `position` and `transform: translate(x% , y%)`. Using `translate` with percentage values moves the element based on its own dimensions.
+2. An element can be accurately positioned using `position` and `transform: translate(x% , y%)`. Using `translate` with percentage values moves the element based on its own dimensions.
 
 #### React
 
-1. 'useRef' is not only used for getting a value but for accessing DOM properties of a referenced node. This was useful for field validation. Other than that, its great for getting a value without changing states.
+1. **`useRef`** is not only used for getting a value but for accessing DOM properties of a referenced node. This was useful for field validation. Other than that, its great for getting a value without changing states.
 
-1. `onBlur` is React's equivalent of JavaScripts `onFocusOut` event.
+1. **`onBlur`** is React's equivalent of JavaScripts `onFocusOut` event.
 
 1. State update functions can be passed into exported functions as callbacks. It is then executed in the function body.
 
 #### TypeScript for React
 
-- `React.SyntheticEvent` is used to define an event type when adding an event listener.
+- `React.SyntheticEvent` is used to define an event type when adding an event listener. Other forms of event types are:
+  - `KeyboardEvent`: For key presses
+  - `FormEvent`: For use with `onInput`
 
 #### JavaScript
 
@@ -120,11 +123,17 @@ To see how you can add code snippets, see below:
 
 - **Modulo operator:** dividing a value by 0 returns `NaN`.
 
-For example, in the _count up_ function _(animation utils)_, if targetVal was divided by 0, the result will be `NaN` creating a bug which causes the setInterval function to loop infinately. To fix this, we use the ternary operator to define the values per case:
+  In the _count up_ function _(animation utils)_, if targetVal was divided by 0, the result will be `NaN` creating a bug which causes the setInterval function to loop infinately. To fix this, we use the ternary operator to define the values per case:
 
-```javascript
-const remainder = steps > 0 ? targetVal % steps : 0;
-```
+  ```javascript
+  const remainder = steps > 0 ? targetVal % steps : 0;
+  ```
+
+- **`e.preventDefault`** isn't only used for preventing form submission or hyperlinks. Additionally, it can be used to prevent certain letters from being entered in a form.
+
+  The 'e' _(Eulers number)_, '+' and '-' values are used to represent numbers. However, 'e' or 'E' sets the `badInput` validation value to `true`, triggering the field's invalid state.
+
+  On top of validating against bad inputs, it improves the user experience to prevent these characters from being entered.
 
 ### Continued development
 
