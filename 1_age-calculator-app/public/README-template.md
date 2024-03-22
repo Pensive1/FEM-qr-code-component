@@ -55,7 +55,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ## My process
 
 1. Programmed the detailed age function
-1. Created the basic HTML for the UI
+1. Created the basic HTML for UI components
+1. Analysed element dimensions in Figma
 1. Styled the UI (mobile first)
 1. Added media queries for the desktop breakpoint
 1. Programmed validation functions

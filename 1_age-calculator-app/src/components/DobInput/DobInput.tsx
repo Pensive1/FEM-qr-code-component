@@ -25,11 +25,15 @@ const DobInput = ({
 
   // Auto-switch fields
   const nextFieldFocus = (
-    e: React.FormEvent<HTMLInputElement>,
+    currentFieldEl: React.RefObject<HTMLInputElement>,
     nextFieldEl: React.RefObject<HTMLInputElement>
-  ) =>
-    (e.target as HTMLInputElement).value.length === 2 &&
-    nextFieldEl.current?.focus();
+  ) => {
+    const isCurrentFieldValid = currentFieldEl.current?.validity.valid;
+
+    if (currentFieldEl.current?.value.length === 2 && isCurrentFieldValid) {
+      nextFieldEl.current?.focus();
+    }
+  };
 
   const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
@@ -56,9 +60,9 @@ const DobInput = ({
       const dayVal = +dayField.value;
 
       const result = detailedAge(dayVal, monthVal, yearVal);
-      setResultYears(result.years);
-      setResultMonths(result.months);
-      setResultDays(result.days);
+      setResultYears(result?.years);
+      setResultMonths(result?.months);
+      setResultDays(result?.days);
     } else {
       setDateErr("Must be a valid date");
       setResultYears(null);
@@ -80,8 +84,10 @@ const DobInput = ({
           min={1}
           max={31}
           onBlur={() => dateCheck(dobDay, setDateErr)}
-          // onChange={() => dateCheck(dobDay, setDateErr)}
-          onInput={(e) => nextFieldFocus(e, dobMonth)}
+          onInput={() => {
+            dateCheck(dobDay, setDateErr);
+            nextFieldFocus(dobDay, dobMonth);
+          }}
           onKeyDown={blockInvalidChars}
         ></input>
         <label className="dob__field-label" htmlFor="dobDay">
@@ -100,8 +106,10 @@ const DobInput = ({
           min={1}
           max={12}
           onBlur={() => monthCheck(dobMonth, setMonthErr)}
-          // onChange={() => monthCheck(dobMonth, setMonthErr)}
-          onInput={(e) => nextFieldFocus(e, dobYear)}
+          onInput={() => {
+            monthCheck(dobMonth, setMonthErr);
+            nextFieldFocus(dobMonth, dobYear);
+          }}
           onKeyDown={blockInvalidChars}
         ></input>
         <label className="dob__field-label" htmlFor="dobMonth">
@@ -120,7 +128,9 @@ const DobInput = ({
           min={1}
           max={new Date().getFullYear()}
           onBlur={() => yearCheck(dobYear, setYearErr)}
-          // onChange={() => yearCheck(dobYear, setYearErr)}
+          onInput={() => {
+            yearCheck(dobYear, setYearErr);
+          }}
           onKeyDown={blockInvalidChars}
         ></input>
         <label className="dob__field-label" htmlFor="dobYear">
