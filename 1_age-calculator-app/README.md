@@ -7,6 +7,7 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [Main features](#main-features)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -15,8 +16,6 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -37,15 +36,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Preview of the age calculator](./src/assets/images/screenshot.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+### Main features
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+- Responsive animated age calculator
+- Two-layer form field validation (HTML + JavaScript)
+- Auto-focus to next field after entering two valid digits
 
 ### Links
 
@@ -62,15 +59,18 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 1. Programmed validation functions
 1. Programmed the 'count-up' number animation
 1. Refactored and split functions into util files
+1. Created a basic test script for the calculator function
 
 ### Built with
 
+- Vite
 - [React](https://reactjs.org/) - JS library
 - JavaScript
 - TypeScript
-- Sass
+- Sass (SCSS)
 - Mobile-first workflow
 - [DOM Constraint API](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState#browser_compatibility) - Field validation
+- Vitest
 
 ### What I learned
 
@@ -102,7 +102,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 }
 ```
 
-2. An element can be accurately positioned using `position` and `transform: translate(x% , y%)`. Using `translate` with percentage values moves the element based on its own dimensions.
+2. Using `translate` with percentage values moves the element based on its own dimensions.
 
 #### React
 
@@ -110,7 +110,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 1. **`onBlur`** is React's equivalent of JavaScripts `onFocusOut` event.
 
-1. State update functions can be passed into exported functions as callbacks. It is then executed in the function body.
+1. State update functions can be passed into utility functions as callbacks. It is then executed in the utility function body.
 
 #### TypeScript for React
 
@@ -139,6 +139,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Continued development
 
 - Learn more React Typescript types through [Codevolution](https://youtube.com/playlist?list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&si=f_JXJXh6i76_cj1-) and the [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
+- Learn how to write unit tests for void and asynchronous functions.
 
 ### Useful resources
 
@@ -147,12 +148,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Richard Acquaye](https://www.richardacquaye.com)
+- Frontend Mentor - [@Pensive1](https://www.frontendmentor.io/profile/Pensive1)
 
 ## Acknowledgments
 
 - [React TypeScript Tutorials for Beginners](https://youtube.com/playlist?list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&si=f_JXJXh6i76_cj1-) - Codevolution
 - [Constraint Validation API in practice](https://youtu.be/D9JHizCAx8U?si=BXeZCudd0T3WCaSR) - Steve Griffith
-- [ChatGPT](https://chat.openai.com/) - For learning and resolving advanced type issues when the solution wasn't readile available in StackOverflow.
+- [ChatGPT](https://chat.openai.com/) - For learning and resolving advanced type issues when the solution wasn't readily available in StackOverflow.
+- [How to block +,- and e in Number Input](https://dev.to/narendersaini32/how-to-block-and-e-in-number-input-1hoe) - Narender Saini

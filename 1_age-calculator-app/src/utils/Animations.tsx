@@ -9,7 +9,7 @@ const countUp = (
     Math.floor(targetVal / options.speed) > 0
       ? Math.floor(targetVal / options.speed)
       : 1;
-  const remainder = steps > 0 ? targetVal % steps : 0;
+  const remainder = targetVal % steps;
   const softTargetVal = targetVal - remainder;
   let startVal = 0;
 
